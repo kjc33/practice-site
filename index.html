@@ -10,61 +10,100 @@
   </head>
   <body>
     <header class="primary-header">
-      <div class="logo-wrapper">
-        <a href="/Users/kylechin/Desktop/practice-website/index.html"><img src="/Users/kylechin/Desktop/practice-website/images/kc-logo.png" alt="Kyle Chin Logo" width="102" height="102" /></a>
-      </div>
-      <div class="nav">
-        <nav id="siteNav" class="site-nav">
-          <ul class="nav-wrapper">
-            <li class="nav-item">
-              <a href="/Users/kylechin/Desktop/practice-website/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="/Users/kylechin/Desktop/practice-website/about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="/Users/kylechin/Desktop/practice-website/portfolio.html">Portfolio</a>
-              <div class="dropdown-content">
-              <ul class="submenu-dropdown">
-                <li><a class="drop-down-content-item" href="#">Project 1</a></li>
-                <li><a class="drop-down-content-item" href="#">Project 2</a></li>
-                <li><a class="drop-down-content-item" href="#">Project 3</a></li>
-              </ul>
-              </div>
-            </li>
-            <li class="nav-item btn">
-              <a href="/Users/kylechin/Desktop/practice-website/contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="mobile-nav" id="mobileNav">
-          <div class="menu-toggle" onclick="myFunction(this)">
-            <div class="top-bar"></div>
-            <div class="middle-bar"></div>
-            <div class="bottom-bar"></div>
-          </div>
+      <div class="header-wrapper">
+        <div class="logo-wrapper">
+          <a href="./index.html"><img src="./images/kc-logo.png" alt="Kyle Chin Logo" width="102" height="102" /></a>
+        </div>
+        <div class="nav">
+          <nav id="siteNav" class="site-nav">
+            <ul class="nav-wrapper">
+              <li class="nav-item">
+                <a href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="./about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="./work.html">Work</a>
+                <div class="dropdown-content">
+                  <ul class="submenu-dropdown">
+                    <li><a class="drop-down-content-item" href="#">Project 1</a></li>
+                    <li><a class="drop-down-content-item" href="#">Project 2</a></li>
+                    <li><a class="drop-down-content-item" href="#">Project 3</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item btn">
+                <a href="./contact.html">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="mobile-nav" id="mobileNav">
+            <div class="menu-toggle" onclick="myFunction(this)">
+              <div class="top-bar"></div>
+              <div class="middle-bar"></div>
+              <div class="bottom-bar"></div>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
-    <div class="hero homepage-hero">
+    <section class="hero homepage-hero">
       <div class="overlay"></div>
       <h1 class="hero-text">Strategy, Design, Development</h1>
-    </div>
-    <section class="block single-column">
+    </section>
+    <section class="block">
       <div class="block-inner">
         <div class="row">
-          <div class="columns">
-            <h2>About</h2>
+          <div class="columns col-1 flex-direction-column">
+            <h2 class="no-top-margin">About</h2>
 
-            <p>
+            <p class="no-top-margin">
               Lorem ipsum dolor sit amet consectetur adipiscing elit commodo accumsan magnis quam, tincidunt ligula tempor lacus tempus dapibus lacinia cras vehicula pharetra. Platea ac integer luctus condimentum natoque ante molestie ullamcorper, posuere interdum nascetur proin at potenti eros
               sociosqu parturient, laoreet vulputate nam egestas faucibus sodales vel. Eu habitant tristique eros pretium scelerisque convallis nisi, quisque montes curabitur venenatis nisl lacus congue, condimentum mus ridiculus fringilla inceptos conubia. Non orci congue duis venenatis porta
               fringilla lobortis suscipit nascetur, taciti lectus luctus nostra nam arcu class torquent tortor dictumst, bibendum lacinia lacus magna vulputate euismod ad ultricies
             </p>
 
-            <p>
+            <p class="no-bottom-margin">
               Mollis sapien cum netus primis etiam ultrices suscipit, praesent metus est habitasse dignissim congue senectus, euismod vivamus eros nascetur accumsan maecenas. Luctus placerat commodo porta aenean tempus nibh cubilia molestie, suspendisse fames orci libero felis sagittis elementum,
               laoreet eu in rhoncus praesent cum pretium. Venenatis nisl primis dictum metus cubilia nostra faucibus nam tincidunt dis justo, ornare dictumst fringilla praesent nisi per euismod pretium mi.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="block grey-bg">
+      <div class="block-inner">
+        <div class="row">
+          <div class="columns col-3 flex-direction-row">
+            <h2 class="full-width">Recent Projects</h2>
+            <div class="card">
+              <div class="image">
+                <img src="./images/laptop-code.jpg" alt="Laptop with Text Editor and Code" />
+              </div>
+              <div class="container">
+                <h3 class="no-top-margin">Project 1</h3>
+                <p class="no-bottom-margin">Strategy, Design, and Development</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image">
+                <img src="./images/laptop-code.jpg" alt="Laptop with Text Editor and Code" />
+              </div>
+              <div class="container">
+                <h3 class="no-top-margin">Project 2</h3>
+                <p class="no-bottom-margin">Design and Development</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image">
+                <img src="./images/laptop-code.jpg" alt="Laptop with Text Editor and Code" />
+              </div>
+              <div class="container">
+                <h3 class="no-top-margin">Project 3</h3>
+                <p class="no-bottom-margin">Development</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
