@@ -87,6 +87,7 @@ header {
 
 .dropdown-content a {
   font-size: 1rem;
+  line-height: 1.4;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -112,17 +113,28 @@ header {
 
 /* Navigation CTA Button */
 
-.nav-item.btn a {
+.nav-item.btn a,
+.cta-btn {
   background-color: #ffffff;
   padding: 8px 16px;
   border: 2px solid #000000;
 }
 
 .nav-item.btn a:hover,
-.nav-item.btn:hover a {
+.nav-item.btn:hover a,
+.cta-btn:hover {
   color: #ffffff;
   background-color: #000000;
   cursor: pointer;
+}
+
+.cta-btn .btn-text {
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.cta-btn:hover .btn-text {
+  color: #ffffff;
 }
 
 /* Navigation Spacing */
@@ -182,10 +194,19 @@ h5,
 h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.75rem;
 }
 
 p {
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
 }
 
 .no-top-margin {
@@ -195,6 +216,12 @@ p {
 .no-bottom-margin {
   margin-bottom: 0;
 }
+
+.extra-bottom-margin {
+  margin-bottom: 35px;
+}
+
+/*Blocks*/
 
 .block {
   padding: 80px 50px 80px 50px;
@@ -225,12 +252,14 @@ p {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 50px;
+  column-gap: 50px;
 }
 
 .full-width {
   width: 100%;
 }
+
+/*Hero*/
 
 .hero {
   height: 500px;
@@ -271,20 +300,75 @@ p {
   background-color: #f4f4f4;
 }
 
+/*Project Cards*/
+
 .card {
   width: 30%;
   overflow: hidden;
   background-color: #ffffff;
   flex-grow: 1;
+  box-shadow: 10px 10px 10px #eaeaea;
 }
 
 .card .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 30px 30px;
 }
 
-.card img {
+.card .image {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 100%;
-  max-height: 35vh;
+  height: 30vh;
+  z-index: 20;
+}
+
+#card-1 .image {
+  background-image: url("./images/custom-home.jpg");
+}
+
+#card-2 .image {
+  background-image: url("./images/surfing.jpg");
+}
+
+#card-3 .image {
+  background-image: url("./images/working-out.jpg");
+}
+
+.card-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+
+.card-heading:hover {
+  border-bottom: 2px solid #000000;
+}
+
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 450px;
+}
+
+.cta-block .block-inner .row .columns {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.cta-block .block-inner .row .columns.col-1.flex-direction-column {
+  align-items: center;
 }
 
 /*
@@ -295,17 +379,25 @@ Footer Styles
 Media Queries
 */
 
+@media screen and (max-width:500px) {
+  .cta-block {
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 767px) {
   header,
   .hero {
     padding: 0 30px 0 30px;
   }
-
   .block {
     padding: 50px 30px 50px 30px;
   }
   .card:not(:last-child) {
     margin-bottom: 30px;
+  }
+  .block .block-inner .row .max-width {
+    max-width: 600px;
   }
 }
 
@@ -331,18 +423,17 @@ Media Queries
 }
 
 @media screen and (max-width: 1200px) {
+  .nav-item {
+    padding: 43px 0;
+  }
   .nav-item a {
     font-size: 1rem;
   }
   .columns.col-3.flex-direction-row {
-    max-width: 800px;
     gap: 0;
   }
   .card {
     width: 100%;
-  }
-  .card img {
-    max-height: initial;
   }
 }
 
@@ -359,6 +450,9 @@ Media Queries
   .card .image,
   .card .container {
     width: 50%;
+  }
+  .columns.col-3.flex-direction-row {
+    max-width: 800px;
   }
 }
 
