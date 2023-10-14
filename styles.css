@@ -332,6 +332,7 @@ figure {
 /*Project Cards*/
 
 .card {
+  position: relative;
   width: 100%;
   overflow: hidden;
   background-color: #ffffff;
@@ -339,7 +340,7 @@ figure {
   box-shadow: 10px 10px 10px #eaeaea;
 }
 
-.card .container {
+.card .card-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -354,7 +355,17 @@ figure {
   background-repeat: no-repeat;
   width: 100%;
   height: 30vh;
-  z-index: 20;
+}
+
+.card-image-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 #card-1 .image {
@@ -372,15 +383,36 @@ figure {
 .card-heading {
   font-size: 1rem;
   font-weight: 600;
-  text-decoration: none;
   color: #000000;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
   margin-bottom: 10px;
 }
 
-.card-heading:hover {
-  border-bottom: 2px solid #000000;
+/*Card CTA Button*/
+
+.open-popup-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  z-index: 19;
+}
+
+.open-popup-btn i {
+  margin-top: 3px;
+}
+
+.open-popup-btn:hover {
+  background-color: #000000;
+}
+
+.open-popup-btn:hover i {
+  color: #ffffff;
 }
 
 .cta-block {
@@ -398,6 +430,81 @@ figure {
 
 .block.cta-block .block-inner .row .columns.col-1.flex-direction-column {
   align-items: center;
+}
+/*Popup*/
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s, top 0.4s;
+  z-index: 999999;
+  display: none;
+}
+
+.popup-overlay {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 20;
+}
+
+.popup-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay-initiated {
+  display: block;
+}
+
+.close-btn,
+.open-popup-btn {
+  cursor: pointer;
+}
+
+.popup-container .popup-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.popup-container .popup-heading,
+.popup-container .popup-subheading {
+  margin-bottom: 20px;
+}
+
+.popup-container .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: solid 2px #000000;
+  border-radius: 50%;
+}
+
+.popup-container .close-btn:hover {
+  background-color: #000000;
+}
+
+.popup-container .close-btn:hover i {
+  color: #ffffff;
 }
 
 /*Form*/
@@ -539,6 +646,10 @@ Media Queries
     width: 102px;
     height: 102px;
   }
+  .popup-container {
+    height: auto;
+    z-index: 30;
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -630,7 +741,7 @@ Media Queries
     margin-bottom: 50px;
   }
   .card .image,
-  .card .container {
+  .card .card-container {
     width: 50%;
   }
 

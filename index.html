@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/862d0b7dda.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="popup-overlay" id="popupOverlay"></div>
     <main>
       <header>
         <div class="primary-header">
@@ -77,29 +78,55 @@
             <div class="columns col-3 flex-direction-row">
               <h2 class="full-width extra-bottom-margin">Recent Projects</h2>
               <article class="card" id="card-1">
-                <div class="image"></div>
-                <div class="container">
-                  <a href="#">
-                    <h3 class="card-heading">Mountainwood Homes</h3>
-                  </a>
+                <div class="image">
+                  <div class="card-image-overlay"></div>
+                </div>
+                <div class="card-container">
+                  <h3 class="card-heading">Mountainwood Homes</h3>
                   <p>Strategy, Design, and Development</p>
+                <div class="card-btn">
+                  <button aria-label="open button" class="open-popup-btn" onclick="openPopup()">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                </div>
+                <div class="popup-container" id="popup">
+                  <div class="popup-heading">Mountainwood Homes</div>
+                  <p class="popup-subheading">Strategy, Design, and Development</p>
+                  <p class="popup-description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dicta ducimus pariatur minus ad officiis possimus modi error cupiditate voluptatum eveniet, eos esse facere! Architecto, placeat. Corporis soluta eos enim quam aliquam officiis nemo tenetur nihil. Eveniet culpa
+                    numquam impedit. Eveniet ab sunt quam voluptatibus laboriosam fuga aspernatur, asperiores ad.
+                  </p>
+                  <button aria-label="close button" class="close-btn" onclick="closePopup()">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                  <script>
+                    let popupOverlay = document.getElementById("popupOverlay");
+                    let popup = document.getElementById("popup");
+
+                    function openPopup() {
+                      popup.classList.add("popup-open");
+                      popupOverlay.classList.add("overlay-initiated");
+                    }
+
+                    function closePopup() {
+                      popup.classList.remove("popup-open");
+                      popupOverlay.classList.remove("overlay-initiated");
+                    }
+                  </script>
                 </div>
               </article>
               <article class="card" id="card-2">
                 <div class="image"></div>
-                <div class="container">
-                  <a href="#">
-                    <h3 class="card-heading">The Chill Foundation</h3>
-                  </a>
+                <div class="card-container">
+                  <h3 class="card-heading">The Chill Foundation</h3>
                   <p>Strategy and Development</p>
                 </div>
               </article>
               <article class="card" id="card-3">
                 <div class="image"></div>
-                <div class="container">
-                  <a href="#">
-                    <h3 class="card-heading">Ritual Health & Fitness</h3>
-                  </a>
+                <div class="card-container">
+                  <h3 class="card-heading">Ritual Health & Fitness</h3>
                   <p>Strategy, Design, and Development</p>
                 </div>
               </article>
